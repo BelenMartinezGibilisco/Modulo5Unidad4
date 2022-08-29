@@ -1,0 +1,24 @@
+<div class="container" style="margin: 50px auto">
+    <div class="row">
+        <div class="col-6 offset-3">
+            <h4>Modificar la Receta</h4>
+            <form method="post" action="/admin/novedades/modificar/{{id}}"> 
+                <input type="hidden" value="{{novedad.id}}" name="id"> 
+                <div class="form-group">
+                    <input type="text" placeholder="Título" value="{{novedad.titulo}}" class="form-control" name="titulo"> 
+                </div>
+                <div class="form-group">
+                    <textarea placeholder="Ingredientes" name="ingredientes" class="form-control">{{novedad.ingredientes}}</textarea> 
+                </div>
+                <div class="form-group">
+                    <textarea placeholder="Preparacion" class="form-control" name="preparacion">{{novedad.preparacion}}  </textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Modificar</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+{{#if error}}
+    <h5>{{message}}</h5>
+{{/if}} 
